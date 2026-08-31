@@ -1,4 +1,4 @@
-name: Build EBW Redux
+name: Build EBW Redux for PR
 on:
   pull_request:
     branches:
