@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -24,10 +24,14 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Upload Mod Jar
+      - name: Upload Fabric Mod
         uses: actions/upload-artifact@v4
         with:
-          name: minecraft-mod
-          path: |
-            fabric/build/libs/*.jar
-            forge/build/libs/*.jar
+          name: electroblobs-wizardry-redux-fabric-${{ github.ref }}-${{ github.job }}.jar
+          path: fabric/build/libs/electroblobs-wizardry-redux-*-fabric.jar
+
+      - name: Upload Forge Mod
+        uses: actions/upload-artifact@v4
+        with:
+          name: electroblobs-wizardry-redux-forge-${{ github.ref }}-${{ github.job }}.jar
+          path: fabric/build/libs/electroblobs-wizardry-redux-*-forge.jar          
