@@ -27,11 +27,11 @@ jobs:
       - name: Upload Fabric Mod
         uses: actions/upload-artifact@v4
         with:
-          name: electroblobs-wizardry-redux-fabric-${{ github.ref }}-${{ github.job }}.jar
+          name: electroblobs-wizardry-redux-fabric-${{ github.head.ref }}-${{ github.job }}.jar
           path: fabric/build/libs/electroblobs-wizardry-redux-*-fabric.jar
 
       - name: Upload Forge Mod
         uses: actions/upload-artifact@v4
         with:
-          name: electroblobs-wizardry-redux-forge-${{ github.ref }}-${{ github.job }}.jar
+          name: electroblobs-wizardry-redux-forge-${{ github.head.ref }}-${{ github.job }}.jar
           path: fabric/build/libs/electroblobs-wizardry-redux-*-forge.jar          
